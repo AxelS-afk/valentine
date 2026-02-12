@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For you, my love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome page -->
+    <section id="welcome-screen" class="screen active">
+        <div class="container">
+            <div class="photo-frame">
+                <img src="photo-couple.jpg" alt="Our photo" class="couple-photo">
+                <div class="photo-placeholder">
+                    <p>Replace this with a photo of you two</p>
+                    <p class="photo-hint">Filename: photo-couple.jpg</p>
+                </div>
+            </div>
+            <h1 class="main-title">My love...</h1>
+            <p class="subtitle">I made something special for you</p>
+            <h2 class="question">Do you want to see your gift?</h2>
+            <div class="button-group">
+                <button id="btn-yes" class="btn btn-yes">Yes, of course!</button>
+                <button id="btn-no" class="btn btn-no">No...</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troll screen if NO -->
+    <section id="troll-screen" class="screen">
+        <div class="container">
+            <div class="sad-emoji">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="55" fill="#FFD4D4" stroke="#FF8B9A" stroke-width="3"/>
+                    <circle cx="40" cy="50" r="5" fill="#FF6B7A"/>
+                    <circle cx="80" cy="50" r="5" fill="#FF6B7A"/>
+                    <path d="M 35 85 Q 60 70 85 85" stroke="#FF6B7A" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <path d="M 25 45 Q 30 40 35 45" stroke="#FF6B7A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    <path d="M 85 45 Q 90 40 95 45" stroke="#FF6B7A" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+            </div>
+            <h2 class="troll-message">That's not nice!</h2>
+            <p class="troll-subtitle">I know you really want to see it...</p>
+            <button id="btn-retry" class="btn btn-yes">Okay, show me!</button>
+        </div>
+    </section>
+
+    <!-- Gifts screen -->
+    <section id="gifts-screen" class="screen">
+        <div class="container">
+            <h1 class="gifts-title">Here are your gifts, sayangku</h1>
+            <p class="gifts-subtitle">Click on each box to discover what's inside</p>
+            
+            <div class="gifts-container">
+                <!-- Cadeau 1: Fleurs et chocolats -->
+                <div class="gift-box" data-gift="1">
+                    <div class="gift-wrapper">
+                        <div class="gift-box-front">
+                            <div class="box-lid"></div>
+                            <div class="box-body"></div>
+                            <div class="ribbon-h"></div>
+                            <div class="ribbon-v"></div>
+                            <div class="bow"></div>
+                        </div>
+                        <div class="gift-content">
+                            <div class="gift-icon">
+                                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M50 85 L50 40" stroke="#E85D75" stroke-width="3" stroke-linecap="round"/>
+                                    <circle cx="35" cy="25" r="12" fill="#FF9AB5"/>
+                                    <circle cx="50" cy="20" r="12" fill="#FFB3C6"/>
+                                    <circle cx="65" cy="25" r="12" fill="#FF9AB5"/>
+                                    <circle cx="42" cy="35" r="10" fill="#FFC9D9"/>
+                                    <circle cx="58" cy="35" r="10" fill="#FFC9D9"/>
+                                    <path d="M30 50 Q50 45 70 50 L75 85 Q50 90 25 85 Z" fill="#FFE5EC"/>
+                                </svg>
+                            </div>
+                            <h3>Flowers and chocolates</h3>
+                            <p>Because you deserve all the sweetness in the world</p>
+                            <div class="gift-photo-frame">
+                                <img src="gift1-photo.jpg" alt="Flowers and chocolates" class="gift-photo">
+                                <div class="gift-photo-placeholder">
+                                    <p>Optional photo</p>
+                                    <p class="photo-hint">gift1-photo.jpg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cadeau 2: Coeur en or -->
+                <div class="gift-box" data-gift="2">
+                    <div class="gift-wrapper">
+                        <div class="gift-box-front">
+                            <div class="box-lid"></div>
+                            <div class="box-body"></div>
+                            <div class="ribbon-h"></div>
+                            <div class="ribbon-v"></div>
+                            <div class="bow"></div>
+                        </div>
+                        <div class="gift-content">
+                            <div class="gift-icon">
+                                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                                            <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M50 85 C50 85 20 60 20 40 C20 25 30 20 40 25 C45 27 50 32 50 32 C50 32 55 27 60 25 C70 20 80 25 80 40 C80 60 50 85 50 85 Z" 
+                                          fill="url(#goldGradient)" 
+                                          stroke="#DAA520" 
+                                          stroke-width="2"/>
+                                    <circle cx="38" cy="38" r="4" fill="#FFEB99" opacity="0.6"/>
+                                    <circle cx="62" cy="42" r="3" fill="#FFEB99" opacity="0.6"/>
+                                </svg>
+                            </div>
+                            <h3>My golden heart</h3>
+                            <p>It belongs to you forever, I love you</p>
+                            <div class="gift-photo-frame">
+                                <img src="gift2-photo.jpg" alt="Our love" class="gift-photo">
+                                <div class="gift-photo-placeholder">
+                                    <p>Optional photo</p>
+                                    <p class="photo-hint">gift2-photo.jpg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cadeau 3: Coupons d'amour -->
+                <div class="gift-box" data-gift="3">
+                    <div class="gift-wrapper">
+                        <div class="gift-box-front">
+                            <div class="box-lid"></div>
+                            <div class="box-body"></div>
+                            <div class="ribbon-h"></div>
+                            <div class="ribbon-v"></div>
+                            <div class="bow"></div>
+                        </div>
+                        <div class="gift-content">
+                            <div class="gift-icon">
+                                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="15" y="25" width="70" height="50" rx="5" fill="#FFE5EC" stroke="#FF9AB5" stroke-width="2"/>
+                                    <line x1="15" y1="40" x2="85" y2="40" stroke="#FF9AB5" stroke-width="1" stroke-dasharray="3,3"/>
+                                    <line x1="15" y1="55" x2="85" y2="55" stroke="#FF9AB5" stroke-width="1" stroke-dasharray="3,3"/>
+                                    <circle cx="50" cy="32.5" r="3" fill="#E85D75"/>
+                                    <circle cx="50" cy="47.5" r="3" fill="#E85D75"/>
+                                    <circle cx="50" cy="62.5" r="3" fill="#E85D75"/>
+                                </svg>
+                            </div>
+                            <h3>Love coupons</h3>
+                            <div class="coupons-list">
+                                <div class="coupon-item">
+                                    <span class="coupon-icon">💆‍♀️</span>
+                                    <span class="coupon-text">A relaxing massage</span>
+                                </div>
+                                <div class="coupon-item">
+                                    <span class="coupon-icon">🛍️</span>
+                                    <span class="coupon-text">A shopping trip</span>
+                                </div>
+                                <div class="coupon-item">
+                                    <span class="coupon-icon">🍽️</span>
+                                    <span class="coupon-text">A romantic dinner</span>
+                                </div>
+                                <div class="coupon-item">
+                                    <span class="coupon-icon">🎬</span>
+                                    <span class="coupon-text">A movie night</span>
+                                </div>
+                            </div>
+                            <p class="coupon-note">Valid for life, aku sayang kamu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-message">
+                <div class="heart-animation">
+                    <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 85 C50 85 20 60 20 40 C20 25 30 20 40 25 C45 27 50 32 50 32 C50 32 55 27 60 25 C70 20 80 25 80 40 C80 60 50 85 50 85 Z" 
+                              fill="#E85D75"/>
+                    </svg>
+                </div>
+                <p class="final-text">Happy Valentine's Day, my love!</p>
+                <p class="final-subtext">I love you so much, sayangku</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
