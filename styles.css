@@ -84,6 +84,85 @@ body::before {
     animation: floatAnimation 6s ease-in-out infinite;
 }
 
+.photo-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.couple-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: block;
+}
+
+.couple-photo.active {
+    opacity: 1;
+}
+
+.couple-photo[src*="photo-couple-"]:not([src=""]) {
+    display: block;
+}
+
+.couple-photo[src*="photo-couple-"]:not([src=""]) ~ .couple-photo ~ .photo-placeholder {
+    display: none;
+}
+
+/* Hide placeholder if at least one photo is loaded */
+.photo-carousel:has(.couple-photo[src*="photo-couple-"]:not([src=""])) ~ .photo-placeholder {
+    display: none;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-frame:hover .carousel-indicators {
+    opacity: 1;
+}
+
+.photo-carousel:has(.couple-photo[src*="photo-couple-"]:not([src=""])) ~ .carousel-indicators {
+    opacity: 0.7;
+}
+
+.photo-frame:hover .carousel-indicators {
+    opacity: 1;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--rose-vif);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--rose-vif);
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: var(--rose-doux);
+    transform: scale(1.1);
+}
+
 @keyframes floatAnimation {
     0%, 100% {
         transform: translateY(0px);
@@ -91,21 +170,6 @@ body::before {
     50% {
         transform: translateY(-15px);
     }
-}
-
-.couple-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
-}
-
-.couple-photo[src]:not([src=""]):not([src="photo-couple.jpg"]) {
-    display: block;
-}
-
-.couple-photo[src]:not([src=""]):not([src="photo-couple.jpg"]) ~ .photo-placeholder {
-    display: none;
 }
 
 .photo-placeholder {
@@ -133,6 +197,13 @@ body::before {
     font-size: 0.75rem;
     opacity: 0.7;
     font-style: italic;
+}
+
+.photo-hint-sub {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    font-style: italic;
+    margin-top: 0.3rem;
 }
 
 .main-title {
