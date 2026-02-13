@@ -3,7 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For you, my love</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>For you, my love - Valentine's Day Gift</title>
+    <meta name="description" content="A romantic interactive website with gifts, love coupons, and special messages for Valentine's Day.">
+    <meta name="keywords" content="valentine, love, romantic gift, valentine's day, interactive gift">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/your-repo-name/">
+    <meta property="og:title" content="Valentine's Day Gift - For My Love">
+    <meta property="og:description" content="A special interactive gift created with love for Valentine's Day">
+    <meta property="og:image" content="https://your-username.github.io/your-repo-name/photo-couple.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://your-username.github.io/your-repo-name/">
+    <meta name="twitter:title" content="Valentine's Day Gift">
+    <meta name="twitter:description" content="A special interactive gift created with love">
+    <meta name="twitter:image" content="https://your-username.github.io/your-repo-name/photo-couple.jpg">
+    
+    <!-- Robots - CHANGE THIS IF YOU WANT TO BLOCK SEARCH ENGINES -->
+    <!-- To allow indexing: content="index, follow" -->
+    <!-- To block indexing: content="noindex, nofollow" -->
+    <meta name="robots" content="index, follow">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +39,24 @@
     <section id="welcome-screen" class="screen active">
         <div class="container">
             <div class="photo-frame">
-                <img src="photo-couple.jpg" alt="Our photo" class="couple-photo">
+                <div class="photo-carousel">
+                    <img src="photo-couple-1.jpg" alt="Our photo 1" class="couple-photo active">
+                    <img src="photo-couple-2.jpg" alt="Our photo 2" class="couple-photo">
+                    <img src="photo-couple-3.jpg" alt="Our photo 3" class="couple-photo">
+                    <img src="photo-couple-4.jpg" alt="Our photo 4" class="couple-photo">
+                    <img src="photo-couple-5.jpg" alt="Our photo 5" class="couple-photo">
+                </div>
                 <div class="photo-placeholder">
-                    <p>Replace this with a photo of you two</p>
-                    <p class="photo-hint">Filename: photo-couple.jpg</p>
+                    <p>Replace with 5 photos of you two</p>
+                    <p class="photo-hint">Filenames: photo-couple-1.jpg to photo-couple-5.jpg</p>
+                    <p class="photo-hint-sub">Photos will auto-rotate every 3 seconds</p>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                    <span class="indicator" data-index="3"></span>
+                    <span class="indicator" data-index="4"></span>
                 </div>
             </div>
             <h1 class="main-title">My love...</h1>
@@ -170,6 +209,10 @@
                                 <div class="coupon-item">
                                     <span class="coupon-icon">🎬</span>
                                     <span class="coupon-text">A movie night</span>
+                                </div>
+                                <div class="coupon-item">
+                                    <span class="coupon-icon">☕</span>
+                                    <span class="coupon-text">Breakfast in bed</span>
                                 </div>
                             </div>
                             <p class="coupon-note">Valid for life, aku sayang kamu</p>
